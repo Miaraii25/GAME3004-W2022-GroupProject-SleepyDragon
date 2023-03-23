@@ -18,6 +18,8 @@ TagManager:
   - Axe
   - Grinder
   - CameraController
+  - Hazard
+  - Spawn
   layers:
   - Default
   - TransparentFX
@@ -30,7 +32,7 @@ TagManager:
   - Hide In Minimap
   - Player
   - Camera
-  - 
+  - NoCollision
   - 
   - 
   - 

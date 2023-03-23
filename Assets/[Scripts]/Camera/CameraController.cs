@@ -28,7 +28,8 @@ public class CameraController : MonoBehaviour
     private PlayerBehaviour playerBehaviour;
 
     // Camera attributes
-    private float cameraRotationSensitivity = 30;
+    [SerializeField]
+    public float cameraRotationSensitivity = 30;
 
     // Input System reference value
     Vector2 lookVector = Vector2.zero;

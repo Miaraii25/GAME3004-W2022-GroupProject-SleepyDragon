@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "emulator-5554",
         "name": "com.SleepyDragon.PawsomePawgoskyGroup9",
-        "processId": 2780,
+        "processId": 3176,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,18 +12,42 @@
             "deviceId": "emulator-5554",
             "name": "com.SleepyDragon.PawsomePawgoskyGroup9",
             "processId": 3571,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "emulator-5554",
             "name": "com.SleepyDragon.PawsomePawgoskyGroup9",
             "processId": 3145,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "emulator-5554",
             "name": "com.SleepyDragon.PawsomePawgoskyGroup9",
             "processId": 2780,
+            "exited": true
+        },
+        {
+            "deviceId": "emulator-5554",
+            "name": "com.SleepyDragon.PawsomePawgoskyGroup9",
+            "processId": 2722,
+            "exited": true
+        },
+        {
+            "deviceId": "emulator-5554",
+            "name": "com.SleepyDragon.PawsomePawgoskyGroup9",
+            "processId": 2784,
+            "exited": false
+        },
+        {
+            "deviceId": "emulator-5554",
+            "name": "com.SleepyDragon.PawsomePawgoskyGroup9",
+            "processId": 2974,
+            "exited": false
+        },
+        {
+            "deviceId": "emulator-5554",
+            "name": "com.SleepyDragon.PawsomePawgoskyGroup9",
+            "processId": 3176,
             "exited": false
         }
     ],

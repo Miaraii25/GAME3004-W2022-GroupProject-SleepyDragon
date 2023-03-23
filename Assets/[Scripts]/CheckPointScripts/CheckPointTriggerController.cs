@@ -35,7 +35,7 @@ public class CheckPointTriggerController : MonoBehaviour
         {
             Debug.Log("Hit CheckPoint");
             // Spawn player to currentSpawnPoint
-            spawnController.SetCurrentSpawnPoint(spawnPoint);
+            //spawnController.SetCurrentSpawnPoint(spawnPoint);
         }
     }
 }

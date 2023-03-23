@@ -16,10 +16,19 @@ using UnityEngine.UI;
 public class ButtonBehaviourM : MonoBehaviour
 {
     public SoundManagerScript soundManager;
+    // to load scene
+    //public string NewGameScene = string.Empty;
+
+    // to start new game and load game
+    public static bool newGame;
+    public static bool loadGame;
+
 
     private void Start()
     {
         soundManager = FindObjectOfType<SoundManagerScript>();
+        //newGame = false;
+        //loadGame = false;
     }
 
     public void OnOptionButtonPressed()
@@ -32,6 +41,10 @@ public class ButtonBehaviourM : MonoBehaviour
     {
         soundManager.PlayButtonSFX();
         SceneManager.LoadScene("GameLevelScene 1");
+
+        //SceneManager.LoadScene(NewGameScene);
+        //newGame = true;
+        //loadGame = false;
     }
 
     public void OnExitButtonPressed()
@@ -96,5 +109,8 @@ public class ButtonBehaviourM : MonoBehaviour
     public void OnLoadButtonPressed()
     {
         soundManager.PlayButtonSFX();
+        //SceneManager.LoadScene(NewGameScene);
+        //newGame = false;
+        //loadGame = true;
     }
 }

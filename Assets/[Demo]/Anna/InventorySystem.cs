@@ -32,7 +32,7 @@ public class InventorySystem : MonoBehaviour
         soundManager = FindObjectOfType<SoundManagerScript>();
     }
 
-    void InitInventory()
+    public void InitInventory()
     {
         m_bIsEnabled = (playerHealth.currentHealth < playerHealth.maxhealth);
         //1.init panels
@@ -89,4 +89,5 @@ public class InventorySystem : MonoBehaviour
         soundManager.PlayPlayerHealSFX();
     }
 
+    
 }

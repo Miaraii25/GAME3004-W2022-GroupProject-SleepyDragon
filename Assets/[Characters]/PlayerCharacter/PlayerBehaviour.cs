@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class PlayerBehaviour : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     public Vector2 lookVector = Vector2.zero;
 
+
     // Components
     Animator animator = null;
     PlayerHealth playerHealth;
@@ -48,6 +50,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     //public Transform player;
     public Vector3 OriginScale;
+    public GameObject forwardPointer;
 
     //Sound Manager
     [SerializeField]
@@ -86,12 +89,14 @@ public class PlayerBehaviour : MonoBehaviour
         if (!(moveVector.magnitude > 0)) 
             moveDirection = Vector3.zero;
 
-        moveDirection = Camera.main.transform.forward * moveVector.y + Camera.main.transform.right * moveVector.x;
+        moveDirection = /*Camera.main.transform.forward*/ forwardPointer.transform.forward * moveVector.y + Camera.main.transform.right * moveVector.x;
 
         if (moveVector != Vector2.zero)
         {
             transform.LookAt(moveDirection + transform.position);
         }
+
+
 
         transform.position += moveDirection * movementSpeed * Time.deltaTime;
 
@@ -188,6 +193,21 @@ public class PlayerBehaviour : MonoBehaviour
         lookVector = value.Get<Vector2>();
     }
 
+    ////save load 
+    //void OnSaveBack()
+    //{
+    //    // playet position and rotation
+    //    string posData = "";
+    //    string rotData = "";
+    //    posData = transform.position.x + "," + transform.position.y + "," + transform.position.z;
+    //    rotData = transform.eulerAngles.x + "," + transform.eulerAngles.y + "," + transform.eulerAngles.z;
+
+    //    PlayerPrefs.SetString("PlayerPos", posData);
+    //    PlayerPrefs.SetString("PlayerRot", rotData);
+
+    //    // inventory
+    //}
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
@@ -195,7 +215,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     // Check Collision
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         // The player can get onto the platform
         if (collision.gameObject.CompareTag("Platform"))
@@ -214,6 +234,10 @@ public class PlayerBehaviour : MonoBehaviour
             isGrounded = true;
         }
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(5);
